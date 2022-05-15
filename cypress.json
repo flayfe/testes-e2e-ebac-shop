@@ -1,3 +1,6 @@
 {
-  "baseUrl": "http://lojaebac.ebaconline.art.br/"
+  "baseUrl": "http://lojaebac.ebaconline.art.br/",
+  "defaultCommandTimeout": 8000,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080
 }
