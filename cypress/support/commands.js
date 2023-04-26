@@ -47,11 +47,25 @@ Cypress.Commands.add('PesquisarProduto', prod => {
   cy.get('.product_title').should('have.text', prod)
 })
 
-Cypress.Commands.add('AdicionarProdutoCarrinho', (prod, qtd, tam, cor) => {
-  cy.xpath('//h1[@class="product_title entry-title"]').should('have.text', prod)
+Cypress.Commands.add('PesquisarProdPorPagina', (prod, page) => {
+  //   cy.xpath(
+  //     '//section[@class="tbay-mainmenu hidden-xs hidden-sm"]//li[contains(@class,"menu-item-629")]'
+  //   ).click()
+  //   cy.xpath(
+  //     '//div[@class="header-main clearfix"]//input[contains(@class,"tbay-search")]'
+  //   ).type(prod + '{enter}')
 
-  cy.get('.button-variable-item-' + tam).click()
+  cy.visit('produtos')
+  cy.get(':nth-child(2) > .page-numbers').should('have.text', page).click()
+  cy.contains(prod).click()
+  cy.get('.product_title').should('have.text', prod)
+})
+
+Cypress.Commands.add('AdicionarProdutoCarrinho', (prod, qtd, tam, cor) => {
+  cy.xpath('//h1[@class="product_title entry-title"]').should('have.text', prod).wait(1000)
+  
   cy.get('.button-variable-item-' + cor).click()
+  cy.get('.button-variable-item-' + tam).click()
   cy.get('.input-text').clear().type(qtd)
   cy.xpath('//button[@class="single_add_to_cart_button button alt"]').click()
   cy.xpath('//div[@role="alert"]').contains(

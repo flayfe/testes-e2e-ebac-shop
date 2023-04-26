@@ -17,7 +17,7 @@
   "homepage": "",
   "devDependencies": {
     "@faker-js/faker": "^6.3.1",
-    "cypress": "^9.6.1",
+    "cypress": "^10.3.1",
     "cypress-xpath": "^1.6.2",
     "faker-br": "^0.4.1"
   }
