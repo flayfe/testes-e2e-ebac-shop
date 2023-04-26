@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
-    "headless`": "npx cypress run"
+    "headless": "npx cypress run"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
     "@faker-js/faker": "^6.3.1",
     "cypress": "^10.3.1",
     "cypress-xpath": "^1.6.2",
-    "faker-br": "^0.4.1"
+    "faker-br": "^0.4.1",
+    "xpath": "^0.0.32"
   }
 }

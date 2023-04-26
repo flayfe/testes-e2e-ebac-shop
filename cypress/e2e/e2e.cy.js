@@ -50,7 +50,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     cy.get('.page-title').should('contain', 'Carrinho')
 
-    cy.get('.checkout-button').click()
+    cy.get('.checkout-button').click().wait(1000)
     cy.get('.showlogin').click()
     cy.get('#username').type(dadosLogin.usuario)
     cy.get('#password').type(dadosLogin.senha)
